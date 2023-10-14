@@ -1,0 +1,96 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1; /* Expand to fill remaining vertical space */
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.input-form {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-top: 4%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input, #calculate-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#calculate-btn {
+    background-color: #258cfb;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form-control:focus {
+    border: 1px solid #258cfb;
+}
+
+p {
+    font-size: 20px;
+}
+
+h2 {
+    color: #258cfb;
+}
+
+.response-info {
+    width: 100%;
+    margin-top: 2.5%;
+    margin-left: 12.5%;
+}
+
+footer {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    color: #777;
+}
+
+/* Hide the footer on screens with a maximum width of 767px (typical for mobile devices) */
+@media (max-width: 767px) {
+    footer {
+        display: none;
+    }
+
+    .input-form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .response-info {
+        margin-left: 0;
+    }
+}

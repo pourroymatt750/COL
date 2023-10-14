@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cost of Living Calculator</h1>
+    <h2>See how far your dollar goes</h2>
+</div>
+
+<div class="input-form">
+    <form method="post" asp-page-handler="CalculateDifference" id="costForm">
+        <label for="curr-city" class="form-label">Current City</label>
+        <input class="form-control" list="old-city-list" name="SelectedOldCity" id="old-city" placeholder="Type to search...">
+        <datalist id="old-city-list">
+            @if (Model.CityStates != null && Model.CityStates.Any())
+            {
+                @foreach (var cityState in Model.CityStates)
+                {
+                    <option value="@cityState.City, @cityState.State" />
+                }
+            }
+        </datalist>
+
+        <label for="new-city" class="form-label">New City</label>
+        <input class="form-control" list="new-city-list" name="SelectedNewCity" id="new-city" placeholder="Type to search...">
+        <datalist id="new-city-list">
+            @if (Model.CityStates != null && Model.CityStates.Any())
+            {
+                @foreach (var cityState in Model.CityStates)
+                {
+                    <option value="@cityState.City, @cityState.State" />
+                }
+            }
+        </datalist>
+
+        <label class="form-label">Current Income</label>
+        <input class="form-control" type="number" name="Income" id="current-income" placeholder="Enter Income" aria-label="default input example">
+
+        <button id="calculate-btn" type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+</div>
+
+<div class="response-info" id="response-section">
+    <p id="newest-city"></p>
+    <h2 id="new-income"></h2>
+    <P id="cost-difference"></P>
+</div>
